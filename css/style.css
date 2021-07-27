@@ -1,0 +1,76 @@
+:root {
+  --stair-url: url('https://infinitestair.tgim4253.repl.co/img/stair/stair3.png');
+  --player-url: url('https://infinitestair.tgim4253.repl.co/img/player/player1/stand1.png');
+  --background-url: url('https://infinitestair.tgim4253.repl.co/img/back/background1.jpg');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.head{
+  background: rgb(223, 10, 10);
+}
+
+ul {
+  /* 리스트의 모양 설정 */
+  list-style:none;
+}
+
+body {
+  height: 100%;
+  /* 내용이 틀을 넘칠때 */
+  overflow: hidden;
+}
+
+/* X > Y : 직계 자손 선택 */
+.playground > ul{
+  --stair-height: 35px;
+  --stair-width: 60px; 
+  --ground-width: calc(var(--stair-width)*7);
+
+  position: relative;
+  border: 1px solid #333;
+  outline: 10px solid rgb(116, 103, 240);
+  width: var(--ground-width);
+  margin: 0 auto;
+
+  background-size: cover;
+  background-image: var(--background-url);
+
+  overflow: hidden;
+}
+
+.playground > ul > li {
+  width: 100%;
+  height: var(--stair-height);
+}
+
+.playground > ul > li > ul {
+  /* 수평으로 보이게 */
+  display: flex;
+}
+
+.playground > ul > li > ul >li {
+  width: var(--stair-width);
+  height: var(--stair-height);
+}
+
+#zoom-btn{
+  position: fixed;
+
+  top: 5%;
+  left: 30%;
+}
+
+.zoom-out, .zoom-in {
+  width: 40px;
+  height: 40px;
+
+  background-color: red;
+  
+  font-size: 35px;
+
+  text-align: center;
+}

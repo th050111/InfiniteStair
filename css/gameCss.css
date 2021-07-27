@@ -1,0 +1,113 @@
+
+.stair {
+  background-color:  black;
+  background-image: var(--stair-url);
+  background-size : contain;
+  border-radius: 10%;
+  box-sizing: border-box;
+}
+
+/* 
+.player{
+  background: blue;
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+  outline: 0px;
+  border:0;
+  border-radius: 0%;
+} */
+
+.player {
+  position: absolute;
+  top: calc(var(--stair-height) * 14 - 3px);
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.player > .player-img{
+  position: relative;
+  background-size: cover;
+  background-image: var(--player-url);
+  
+  height: 70px;
+  width: 70px;
+}
+
+.question-mark {
+  display: none;
+  position: absolute;
+  top: -20%;
+  left: 90%;
+  font-size: 40px;
+  font-weight: bolder; 
+  color: red;
+}
+
+
+.ui{
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.ui > .score{
+  font-size: 55px;
+  font-weight: bolder;
+  color: white;
+}
+
+.game-end-ui{
+  display: none;
+
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+
+  text-align: center;
+  font-size: 55px;
+  font-weight: bolder; 
+  color: red;
+  white-space: nowrap;
+}
+
+.game-end-ui > .game-end-score{
+  font-size: 40px;
+  font-weight: bolder; 
+  color:rgb(102, 212, 126);
+}
+
+.game-end-score{
+  background-color: rgb(241, 230, 200, 0.3);
+  border: 5px solid rgb(241, 230, 200);
+  border-radius: 10%;
+  height: 350px;
+}
+
+.game-end-score > span, .game-end-best > span {
+  color: white;
+}
+
+.restart-btn{
+  position: absolute;
+  left: 80%;
+  top: 75%;
+  transform: translate(-50%);
+  background-image: url('https://infinitestair.tgim4253.repl.co/button.png');
+  background-size: cover;
+  border-radius: 20%;
+  height: 85px;
+  width: 85px;
+}
+.home-btn{
+  position: absolute;
+  left: 20%;
+  top: 75%;
+  transform: translate(-50%);
+  background-image: url('https://infinitestair.tgim4253.repl.co/homeBtn.png');
+  background-size: cover;
+  border-radius: 30%;
+  height: 85px;
+  width: 85px;
+}
