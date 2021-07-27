@@ -1,4 +1,40 @@
 
+
+.hp-bar{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+
+  background-color: white;
+  
+
+  width: 300px;
+  height: 40px;
+}
+
+.hp-bar-fill{
+
+  height: 100%;
+  width: 50%;
+  z-index: 10;
+
+  background-color: red;
+
+  transition: width 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .stair {
   background-color:  black;
   background-image: var(--stair-url);

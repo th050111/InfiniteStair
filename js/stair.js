@@ -54,6 +54,7 @@ document.addEventListener("keyup", event => {
     if (isArray) {
       move();
       movingImg();
+      restoreHp(5 );
     }
   }
 });
