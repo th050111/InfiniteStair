@@ -11,7 +11,7 @@ const BOLCK_MAX = 7;
 const BLOCK_MIN = 4;
 const BLOCK_HEIGHT = 35;
 
-//variables
+//variables 
 const type = {
   0: "stand",
   1: "run",
@@ -54,7 +54,7 @@ document.addEventListener("keyup", event => {
     if (isArray) {
       move();
       movingImg();
-      restoreHp(5 );
+      restoreHp(7);
     }
   }
 });
@@ -118,6 +118,8 @@ function restart() {
   toCreatBlocks = Math.floor(Math.random() * BOLCK_MAX) + BLOCK_MIN - 3;
   createNewBlocks();
   renderBlock();
+
+  restartHp();
 }
 
 //게임 끝났을때
@@ -198,6 +200,9 @@ function move() {
 
   isEmpty(currentPlayerLocation);
   currentScore++;
+  if (stairLevel[level - 1] < currentScore && level < LEVEL_MAX) {
+    level++;
+  }
   currentScoreText.innerText = currentScore;
 }
 
@@ -231,9 +236,9 @@ function createNewBlocks() {
   while ((currentBlocks.length + extra) < GAME_ROWS) {
     if (toCreatBlocks === 0) {
       toCreatBlocks = Math.floor(Math.random() * BOLCK_MAX);
-      if(toCreatBlocks < 1)
+      if (toCreatBlocks < 1)
         toCreatBlocks = 1;
-      else if(toCreatBlocks < 4){
+      else if (toCreatBlocks < 4) {
         toCreatBlocks += BLOCK_MIN;
       }
       groundDirection = groundDirection === "right" ? "left" : "right";
@@ -246,7 +251,6 @@ function createNewBlocks() {
       currentBlocks.unshift(newLocation);
     } else {
       extra++;
-      console.log("hi");
       toCreatBlocks++;
     }
     toCreatBlocks--;
@@ -271,7 +275,6 @@ function changClassName(location, addName = null, deleteName = null) {
 }
 
 function deleteFirstBlocks(isDelete = true) {
-  console.log("1");
   firstBlocks.forEach(block => {
     changClassName(block, null, "stair");
   })

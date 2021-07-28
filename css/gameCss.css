@@ -24,17 +24,6 @@
   transition: width 0.5s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .stair {
   background-color:  black;
   background-image: var(--stair-url);
